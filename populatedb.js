@@ -14,7 +14,7 @@ var async = require('async')
 var Book = require('./models/bookModel')
 var Author = require('./models/authorModel')
 var Genre = require('./models/genreModel')
-var BookInstance = require('./models/bookinstanceModel')
+var BookInstance = require('./models/bookInstanceModel')
 
 
 var mongoose = require('mongoose');
@@ -29,10 +29,10 @@ var genres = []
 var books = []
 var bookinstances = []
 
-function authorCreate(first_name, family_name, d_birth, d_death, cb) {
-  authordetail = {firstName:first_name , familyName: family_name }
-  if (d_birth != false) authordetail.date_of_birth = d_birth
-  if (d_death != false) authordetail.date_of_death = d_death
+function authorCreate(firstName, familyName, dateOfBirth, dateOfDeath, cb) {
+  authordetail = {firstName:firstName , familyName: familyName }
+  if (dateOfBirth != false) authordetail.dateOfBirth = dateOfBirth
+  if (dateOfDeath != false) authordetail.dateOfDeath = dateOfDeath
   
   var author = new Author(authordetail);
        
